@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Project Title Here</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+      <a class="navbar-brand" href="../home.html">Practical Machine Deep Learning</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="../home.html">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h1 class="mt-5">Identification and Prediction of Spoiled Fruits & Vegetables</h1>
+        <ul class="list-unstyled">
+          <li>Doaa Sallam</li>
+          <li>Malak Samer</li>
+        </ul>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-lg-12 text-left">
+        <h2 class="mt-5">Problem Statement</h2>
+		<p>
+			More than 30% of all food produced is lost or wasted. 
+      Our goal is to reduce the food waste worldwide by building a deep learning model that helps predict the average shelf life of any food according to images that help classify if it is rotten or not.
+
+		</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12 text-left">
+        <h2 class="mt-5">Dataset</h2>
+
+        <p>
+			To build our model, we will be using two datasets. The first dataset is an image-based dataset of 20 classes of fruits and vegetables (downloaded from kaggle). This dataset will be used to train and test a CNN model for fruit and vegetable classification. For the second dataset, we will be utilizing a synthetic dataset algorithm (obtained from github). This dataset relies on synthetic data that generates random values for fruit type (20 classes of the first dataset), packaging type (3 types), additives (3 types), temperature (between 0C and 40C) and humidity (between 0% and 100%) with the GT shelf life generated using a “secret equation” embedded in the original code. 
+      The secret equation from the original model was adopted and data frame was expanded to include additional fruits and vegetables.
+
+		</p>
+
+		<br/> <!-- Empty Line before the image -->
+	    <div class="img-container" align="center"> <!-- Block parent element -->
+      		<img src="resources/images/dataset1.png" class="img-fluid text-center">
+    	</div>
+    	<br/> <!-- Empty Line after the image -->
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12 text-left">
+        <h2 class="mt-5">Input/Output Examples</h2>
+
+        <p>
+			Our proposed system takes an image of a specific fruit or vegetable, its storage conditions (temperature, humidity, packagaing and additives) and outputs a classification of that type of produce and its predicted remaining shelf life
+		</p>
+
+		<br/> <!-- Empty Line before the image -->
+	    <div class="img-container" align="center"> <!-- Block parent element -->
+      		<img src="resources/images/input output examples.jpg" class="img-fluid text-center">
+    	</div>
+    	<br/> <!-- Empty Line after the image -->
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-lg-12 text-left">
+        <h2 class="mt-5">State of the art</h2>
+
+        <p>
+			Recent research addressing machine learning (ML) applications for food spoilage classification highlights several emerging trends and insights. First, multi-modal approaches that integrate image data with physical sensor data—such as gas, humidity, and temperature—yield more robust and reliable detection of food spoilage than either modality alone. Convolutional neural networks (CNNs) are especially effective for image-based classification of spoiled versus fresh food due to their capacity for hierarchical feature extraction and pattern recognition, often achieving high levels of accuracy in experimental studies7. When it comes to sensor data, ensemble methods such as random forest and support vector machines (SVM) are commonly employed, as they offer both robustness and strong performance across diverse datasets.any recent studies report classification accuracy exceeding 90% when sufficient data is available and well-tuned models are used. 
+      A summary of our survey for published research addressing the food spoilage classification and minimization problems can be found in below table.
+		</p>
+
+		<br/> <!-- Empty Line before the image -->
+	    <div class="img-container" align="center"> <!-- Block parent element -->
+      		<img src="resources/images/stateoftheart_1.png" class="img-fluid text-center">
+    	</div>
+    	<br/> <!-- Empty Line after the image -->
+        <p>
+			Our comprehensive review of current literature and research indicates that the majority of existing machine learning models for assessing fruit and vegetable quality focus primarily on binary classification tasks, categorizing produce as either “fresh” or “rotten”. While these approaches are valuable for industry stakeholders—facilitating rapid, automated identification and removal of spoiled or diseased products in a non-labor-intensive manner—they do not directly address the issue of food waste reduction. 
+      </p>
+    </div>
+    </div>
+    
+
+    <div class="row">
+      <div class="col-lg-12 text-left">
+        <h2 class="mt-5">Orignial Model from Literature</h2>
+
+        <p>
+			The original model used to predict remaining shelf life of produce using a random forest regressor model and the inputs are manually entered as text.
+		</p>
+
+		<br/> <!-- Empty Line before the image -->
+	    <div class="img-container" align="center"> <!-- Block parent element -->
+      		<img src="resources/images/Original Model.png" class="img-fluid text-center">
+    	</div>
+    	<br/> <!-- Empty Line after the image -->
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12 text-left">
+        <h2 class="mt-5">Proposed Updates</h2>
+
+        <p>
+			Several updates were made to the original model, a summary of those could be found below
+		</p>
+
+		<h5 class="mt-5">Update #1: Replaced RFG with FFNN </h5>
+		<p>
+			The original Random Forest model was replaced with a FFNN, while keeping the same types of inputs and outputs. The initial results showed MAE of 1.44 with no underfitting or overfitting
+		</p>
+		<br/> <!-- Empty Line before the image -->
+	    <div class="img-container" align="center"> <!-- Block parent element -->
+      		<img src="resources/images/update1.png.jpg" class="img-fluid text-center">
+    	</div>
+    	<br/> <!-- Empty Line after the image -->
+
+		<h5 class="mt-5">Update #2: Combined CNN model the FFNN model</h5>
+		<p>
+			We then combined the FFNN model with a CNN model for produce image classification under a multitask learning algorithm. However, the model validation accuracy was very low (37%) for the fruit classification task and further model fine-tuning was necessary. 
+      Despite multiple trials, the model was very computationally exhaustive. EfficientNetB0 adoption led to overfitting (even with dropouts), and VGG-16 led to underfitting.
+
+      </p>
+  		<br/> <!-- Empty Line before the image -->
+	    <div class="img-container" align="center"> <!-- Block parent element -->
+      		<img src="resources/images/update 2.png" class="img-fluid text-center">
+    	</div>
+    	<br/> <!-- Empty Line after the image -->
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-lg-12 text-left">
+    <h5 class="mt-5">Update #3: Ensemble Learning Model</h5>
+		<p>
+			The custom CNN model was combined with FFNN model for shelf life prediction but via ensemble learning instead of the multitask model, however still model accuracy was very low. Performance enhancements were observed after the following modifications:
+      CNN Model Adjustments:
+      <ul>
+       <li>Loads EfficientNetB0 without its top classification layers (include_top=False), using ImageNet weights for strong feature extraction on 224x224 RGB inputs. Freezes all backbone weights (trainable=False) to prevent updates during initial training, reducing overfitting risk on small datasets. </li>
+       <li>Afterwards, a functioncal API model is created where the input layer matches backbone shape and EfficientNet-specific preprocessing (normalization/scaling) is applied. The input passes through the frozen backbone (training=False skips BN updates) and global average pooling is added to reduce spatial dimensions to a feature vector. </li>
+       <li>Then, several dense layers with ReLU activations are stacked for high-level feature learning, interspersed with dropout layers (20%) for regularization. Finally, a softmax output layer classifies into 20 fruit/vegetable categories.</li>
+      </ul>
+      Shelf-life model adjustments:
+      <ul>
+       <li>FFNN was replaced with AdaBoost Regressor for simplicity, with RF regressor as the base estimator to improve performance.</li>
+       <li>Initial MAE achieved was 4.91 days.</li>
+       <li>Hyperparameter tuning was performed using GridSearchCV to optimize parameters such as n_estimators, learning_rate, and max_depth of the base estimator.</li>
+
+      </ul>
+       </p>
+    		<br/> <!-- Empty Line before the image -->
+	    <div class="img-container" align="center"> <!-- Block parent element -->
+      		<img src="resources/images/Final Model.png" class="img-fluid text-center">
+          <img src="resources/images/model architecture2.png" class="img-fluid text-center">
+    	</div>
+     	<br/> <!-- Empty Line after the image -->
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12 text-left">
+        <h2 class="mt-5">Results</h2>
+
+        <h3>CNN Model Performance (Product Type Classification)</h3>
+        <ul>
+          <li>Test Accuracy: test_acc (0.980)</li>
+          <li>CNN Classification Accuracy: cnn_accuracy (0.9799)</li>
+          <li>Test Loss: test_loss (0.1306)</li>
+          <li>The CNN model demonstrates excellent performance in classifying product types from images, with an accuracy of approximately 98% on the test set. This indicates that it's highly effective at correctly identifying the fruit or vegetable.</li>
+        </ul>
+
+        <h3 class="mt-4">AdaBoost Model Performance (Shelf Life Regression)</h3>
+        <p>We evaluated two versions of the AdaBoost model:</p>
+
+        <ul>
+          <li><strong>Initial AdaBoost Model (with default DecisionTreeRegressor base estimator, max_depth=3):</strong>
+            <ul>
+              <li>R² Score: r2 (0.6160)</li>
+              <li>Mean Absolute Error (MAE): mae (4.9896 days)</li>
+              <li>Root Mean Squared Error (RMSE): rmse (5.6406 days)</li>
+            </ul>
+          </li>
+          <li><strong>Improved AdaBoost Model (with RandomForestRegressor base estimator, after hyperparameter tuning):</strong>
+            <ul>
+              <li>R² Score: r2_rf (0.9146)</li>
+              <li>Mean Absolute Error (MAE): mae_rf (2.1817 days)</li>
+              <li>Root Mean Squared Error (RMSE): rmse_rf (2.6599 days)</li>
+            </ul>
+          </li>
+        </ul>
+
+		<br/> <!-- Empty Line before the image -->
+	    <div class="img-container" align="center"> <!-- Block parent element -->
+      		<img src="resources/images/CNNmodel.png" class="img-fluid text-center">
+          <img src="resources/images/Confusion Matrix.png" class="img-fluid text-center">
+          <img src="resources/images/RFR base MAE.png" class="img-fluid text-center">
+          <img src="resources/images/output examples.jpg" class="img-fluid text-center">
+    	</div>
+    	<br/> <!-- Empty Line after the image -->
+
+      <p>
+        SHAP analysis was conducted to interpret both models' predictions. For the CNN model, the SHAP plots confirm that the model is making its classifications based on semantically relevant regions within the images, primarily focusing on the actual fruit or vegetable while largely disregarding or negatively weighting the background elements.
+      </p>
+      <ul>
+        <li>Pixels forming the actual fruit or vegetable object consistently showed the highest positive SHAP values (red regions).</li>
+        <li>Negative SHAP values (blue regions) were predominantly found in the background or less relevant areas surrounding the main object.</li>
+        <li>The strong positive SHAP values on the object itself directly correlated with the model's high confidence in correctly predicting the class.</li>
+      </ul>
+    <br/> <!-- Empty Line before the image -->
+	    <div class="img-container" align="center"> <!-- Block parent element -->
+      		<img src="resources/images/SHAP_CNN.jpg" class="img-fluid text-center">
+          <img src="resources/images/SHAP_CNN2.jpg" class="img-fluid text-center">
+    	</div>
+    	<br/> <!-- Empty Line after the image -->
+    
+      <p>
+      For the AdaBoost shelf life regression model, the SHAP summary plot indicates that temperature and humidity are the most influential features affecting shelf life predictions, with higher temperatures and humidity levels generally leading to shorter predicted shelf lives. This insight aligns with known factors affecting produce spoilage, validating the model's relevance and reliability. The vertical spread around zero for many one‑hot features suggests some product classes may be under‑represented or have limited variation in conditions, indicating potential areas for dataset expansion to improve model robustness.
+		</p>
+    <br/> <!-- Empty Line before the image -->
+	    <div class="img-container" align="center"> <!-- Block parent element -->
+      		<img src="resources/images/SHAP_RFR.png" class="img-fluid text-center">
+    	</div>
+    	<br/> <!-- Empty Line after the image -->
+      </div>
+    </div>
+    
+
+
+    <div class="row">
+      <div class="col-lg-12 text-left">
+        <h2 class="mt-5">Technical report</h2>
+
+        <p>
+			Here you will detail the details related to training, for example:
+		</p>
+
+	 	<ul>
+		  <li>Programming framework: TensorFlow/Keras, Scikit-learn, Pandas, NumPy, Matplotlib and Seaborn</li>
+		  <li>Training hardware: Colab</li>
+		  <li>Training time: ~15 minutes</li>
+		  <li>Number of epochs: 10</li>
+		  <li>Time per epoch: ~95 seconds</li>
+		</ul> 
+      </div>
+    </div>
+
+	<div class="row">
+	  <div class="col-lg-12 text-left">
+	    <h2 class="mt-5">Conclusion</h2>
+
+	    <p>
+			<strong>Conclusion and Future Work</strong>
+      In conclusion, our integrated approach combining CNN-based image classification with AdaBoost regression for shelf life prediction demonstrates significant potential in reducing food waste through accurate identification and lifespan estimation of fruits and vegetables. The high accuracy of the CNN model in classifying produce types, coupled with the improved performance of the AdaBoost model after hyperparameter tuning, underscores the effectiveness of ensemble learning techniques in this domain. It also signifies that simple models can often be better than complex ones. Future work will focus on expanding the dataset to include real-life data of actual shelf life of produce, instead of utilizing synthetic data. Additionally, Current model assumes that the fruit has just been harvested, adding another parameter for the harvest date or production date to get the remaining shelf life will be more accurate. Finally, the CNN model can be further trained to identify packaging as well as produce type rather than manual entry
+		</p>
+
+	  </div>
+	</div>
+
+	<div class="row">
+	  <div class="col-lg-12 text-left">
+	    <h2 class="mt-5">References</h2>
+
+		<ol>
+		  <li><a href="https://github.com/menna02/Fruit-Classification-Model">Original fruit classification model</a></li>
+		  <li><a href="https://github.com/ozgunes91/shelf_life_prediction">Original shelf life prediction model and synthetic dataset code</a></li>
+		  <li><a href="https://www.kaggle.com/datasets/kritikseth/fruit-and-vegetable-image-recognition">Fruits and Vegetables dataset/a></li>
+		</ol> 
+	  </div>
+	</div>
+
+  </div>
+
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="../vendor/jquery/jquery.slim.min.js"></script>
+  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
